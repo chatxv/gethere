@@ -12,17 +12,17 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #fff;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 120vh;
         }
         .container {
             text-align: center;
-            background: #1f1f1f;
+            background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -71,11 +71,11 @@
             border: none;
             border-radius: 5px;
             color: white;
-            background: green;
+            background: #26a17b;
             cursor: pointer;
         }
         .buttons button:hover {
-            background: darkorange;
+            background: #000000;
         }
         .withdraw-section {
             margin-top: 20px;
@@ -126,30 +126,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>USDT Instant Earn</h1>
+        <h1>MrBeast USDT Earn💲</h1>
 
-      
-      
-        <img src="https://i.ibb.co.com/W6jNMpF/photo-6038656673545041524-x.jpg" alt="Button Image" width="100%px" height="100%px">
+        <img src="https://i.ibb.co.com/gm7xrZz/hq720-1.jpg" alt="Button Image" width="300px" height="100%px">
       
         <!-- Display User Info -->
         <div class="user-info">
-            <p>1000 Points = ( $100 USDT )</p> <p> <span id="user-name"></span></p>
+           <b> <p>Complete Per Task To Earn 1$ USDT</p> <p> <span id="user-name"></span></p>
         </div>
 
         <div class="stats">
-            <p>Watched Ads : <span id="watched-ads">0</span></p>
-            <p>Earned Points : <span id="earned-points">0</span></p>
+            <b><p>Complete Task  : <span id="watched-ads">0</span></p>
+            <p>Balance USDT : <span id="earned-points">0</span></p></b>
         </div>
-        <div class="progress-circle">
-            <span id="ads-progress">0%</span>
+      
+           <div >
+            <span id="ads-progress"></span>
         </div>
+       <img src="https://i.ibb.co.com/t44PPvS/hello-click-here-1-unscreen.gif" alt="Button Image" width="120px" height="100%px">
+      
         <div class="buttons">
-            <button id="watch-ad-btn" onclick="watchAd()">Watch Ads</button>
-            <button id="auto-ad-btn" onclick="startAutoAds()">Auto Show Ads</button>
-            <button id="stop-auto-btn" onclick="stopAutoAds()">Stop Auto Ads</button>
+            <button id="watch-ad-btn" onclick="watchAd()"><b>Task #1 (Earn USDT)</button>
+              <button id="watch-ad-btn" onclick="watchAd()"><b>Task #2 (Earn USDT)</button>
+              <button id="watch-ad-btn" onclick="watchAd()"><b>Task #3 (Earn USDT)</button>
+            
             <!-- Added Withdraw Button -->
-               <button onclick="withdrawPoints()">Withdraw</button>
+               <button onclick="withdrawPoints()"><b>Withdraw USDT</button>
             <p id="withdraw-status"></p>
         </div>
 
@@ -182,7 +184,7 @@
         let autoAdInterval;
 
         // Simulate user name from Telegram User ID (replace with actual logic to get user info)
-        const telegramUserName = "Click On Ads To Earn USDT"; // Replace this line with the actual logic to fetch username
+        const telegramUserName = "Click On Task Ads To Earn USDT"; // Replace this line with the actual logic to fetch username
         document.getElementById("user-name").textContent = telegramUserName;
 
         // Check if user data is saved in localStorage
@@ -200,7 +202,7 @@
                     // When the ad is shown, we add points
                     watchedAdsCount++;
                     document.getElementById('watched-ads').textContent = watchedAdsCount;
-                    earnedPoints += 1; // Add 0.50 points per ad watched
+                    earnedPoints += 1 ; // Add 0.50 points per ad watched
                     document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
                     localStorage.setItem('watchedAdsCount', watchedAdsCount);
                     localStorage.setItem('earnedPoints', earnedPoints.toFixed(2));
@@ -243,7 +245,7 @@
             const phoneNumber = document.getElementById('withdraw-phone').value;
 
             if (amount < MIN_WITHDRAW_POINTS) {
-                document.getElementById('withdraw-status').textContent = `Minimum withdrawal amount is ${MIN_WITHDRAW_POINTS} points.`;
+                document.getElementById('withdraw-status').textContent = `Minimum withdrawal amount is ${MIN_WITHDRAW_POINTS} USDT.`;
                 return;
             }
 
@@ -291,4 +293,3 @@
   
 </body>
 </html>
-
