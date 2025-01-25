@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+         
+  
   
   
   
@@ -12,17 +13,17 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #121212;
+            color: #fff;
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 150vh;
         }
         .container {
             text-align: center;
-            background: #ffffff;
+            background: #1f1f1f;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -71,11 +72,11 @@
             border: none;
             border-radius: 5px;
             color: white;
-            background: #26a17b;
+            background: green;
             cursor: pointer;
         }
         .buttons button:hover {
-            background: #000000;
+            background: #b1aeae;
         }
         .withdraw-section {
             margin-top: 20px;
@@ -126,34 +127,87 @@
 </head>
 <body>
     <div class="container">
-        <h1>MrBeast USDT Earn💲</h1>
-
-        <img src="https://i.ibb.co.com/gm7xrZz/hq720-1.jpg" alt="Button Image" width="300px" height="100%px">
+        <h1>USDT Instant Earn</h1>
       
+        <img src="https://i.ibb.co.com/pXvx3X8/photo-6038656673545041524-x.jpg" alt="Button Image" width="300px" height="100%px">
+   
+
+        
         <!-- Display User Info -->
         <div class="user-info">
-           <b> <p>Complete Per Task To Earn 1$ USDT</p> <p> <span id="user-name"></span></p>
+            <p>1000 Points = ( $100 USDT )</p> <p> <span id="user-name"></span></p>
         </div>
 
         <div class="stats">
-            <b><p>Complete Task  : <span id="watched-ads">0</span></p>
-            <p>Balance USDT :💲<span id="earned-points">0</span></p></b>
+            <p>Watched Ads : <span id="watched-ads">0</span></p>
+            <p>Earned Points : <span id="earned-points">0</span></p>
         </div>
-      
-           <div >
-            <span id="ads-progress"></span>
+        <div class="progress-circle">
+            <span id="ads-progress">0%</span>
         </div>
-       <img src="https://i.ibb.co.com/t44PPvS/hello-click-here-1-unscreen.gif" alt="Button Image" width="120px" height="100%px">
-      
         <div class="buttons">
-            <button id="watch-ad-btn" onclick="watchAd()"><b>💰 Task #1 (Earn USDT)</button>
-              <button id="watch-ad-btn" onclick="watchAd()"><b>💰 Task #2 (Earn USDT)</button>
-              <button id="watch-ad-btn" onclick="watchAd()"><b>💰 Task #3 (Earn USDT)</button>
-            
+            <button id="watch-ad-btn" onclick="watchAd()">Watch Ads</button>
+            <button id="auto-ad-btn" onclick="startAutoAds()">Auto Show Ads</button>
+            <button id="stop-auto-btn" onclick="stopAutoAds()">Stop Auto Ads</button>
             <!-- Added Withdraw Button -->
-               <button onclick="withdrawPoints()"><b>📤 Withdraw USDT</button>
+               <button onclick="withdrawPoints()">Withdraw</button>
             <p id="withdraw-status"></p>
         </div>
+      
+<div style="text-align: center;"><span style="color: #04ff00;">10$ =(100 point </span><span style="color: white;">Per Invited </span><span style="color: #04ff00;">Friend &nbsp;</span></div><div style="text-align: center;"><span style="color: #04ff00;">Your Invites Earned 1000 point&nbsp;<br />&nbsp;You Get 10$=(100) Point</span>👇 </div>
+      <br>
+      
+<center>
+<!-- Invite Button -->
+<a href="http://t.me/share/url?url=Instant%20USDT%20Pement%20Bot%20%F0%9F%A4%91%20Earn%20$100%20USDT%20Daily%20%F0%9F%91%87%20https://t.me/usdtinstantearnbot/Usdt_Instant_Earn" target="_blank"> 
+  <button style="background-color:#ffffff; color:#000000; padding:10px 15px; border-radius:5px; border:none; font-size:16px; cursor:pointer;">
+    👤 Invite Friends
+  </button>
+</a>
+<!-- Include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Copy Link Button -->
+<button onclick="copyLink()" style="background-color:#ffffff; color:#000000; padding:10px 20px; border-radius:5px; border:none; font-size:16px; cursor:pointer;">
+ 🔗 Copy Link
+</button>
+
+<!-- Popup Message -->
+<div id="popupMessage" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0,0,0,0.8); color: white; padding: 5px; border-radius: 5px; font-size: 14px; z-index: 9999; text-align: center;">
+  <div style="display: inline-flex; align-items: center;">
+    <i class="fas fa-check-circle" style="color: #4CAF50; font-size: 30px; margin-right: 10px;"></i>
+    <span>Successfully! </span>
+  </div>
+</div>
+
+<script>
+  // Function to copy the invite link
+  function copyLink() {
+    const linkToCopy = "https://t.me/usdtinstantearnbot/Usdt_Instant_Earn";
+    
+    navigator.clipboard.writeText(linkToCopy)
+      .then(() => {
+        // Show the popup message
+        const popup = document.getElementById("popupMessage");
+        popup.style.display = "block"; // Show the popup
+        
+        // Hide the popup after 3 seconds
+        setTimeout(() => {
+          popup.style.display = "none"; // Hide the popup
+        }, 3000);
+      })
+      .catch(err => {
+        alert("Failed to copy: " + err);
+      });
+  }
+</script>
+</center>
+      
+      
+      
+      
+      
+      
 
         <!-- Withdraw Section -->
         <div class="withdraw-section" id="withdraw-section">
@@ -184,7 +238,7 @@
         let autoAdInterval;
 
         // Simulate user name from Telegram User ID (replace with actual logic to get user info)
-        const telegramUserName = "Click On Task Ads To Earn USDT"; // Replace this line with the actual logic to fetch username
+        const telegramUserName = "Click On Ads To Earn USDT"; // Replace this line with the actual logic to fetch username
         document.getElementById("user-name").textContent = telegramUserName;
 
         // Check if user data is saved in localStorage
@@ -202,7 +256,7 @@
                     // When the ad is shown, we add points
                     watchedAdsCount++;
                     document.getElementById('watched-ads').textContent = watchedAdsCount;
-                    earnedPoints += 1 ; // Add 0.50 points per ad watched
+                    earnedPoints += 1; // Add 0.50 points per ad watched
                     document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
                     localStorage.setItem('watchedAdsCount', watchedAdsCount);
                     localStorage.setItem('earnedPoints', earnedPoints.toFixed(2));
@@ -216,7 +270,7 @@
         // Update progress circle based on watched ads
         function updateProgressCircle() {
             const percentage = (watchedAdsCount / 1) * 100;
-            document.getElementById('ads-progress').textContent = ``;
+            document.getElementById('ads-progress').textContent = `${percentage}%`;
         }
 
         // Function to start auto showing ads
@@ -245,7 +299,7 @@
             const phoneNumber = document.getElementById('withdraw-phone').value;
 
             if (amount < MIN_WITHDRAW_POINTS) {
-                document.getElementById('withdraw-status').textContent = `Minimum withdrawal amount is ${MIN_WITHDRAW_POINTS} USDT.`;
+                document.getElementById('withdraw-status').textContent = `Minimum withdrawal amount is ${MIN_WITHDRAW_POINTS} points.`;
                 return;
             }
 
@@ -287,7 +341,13 @@
     </script>
   
   
-
+   <script>
+            window.TelegramAdsController = new TelegramAdsController();
+            window.TelegramAdsController.initialize({
+              pubId: "954797",
+              appId: "1192",
+            });
+          </script>  
   
   
   
